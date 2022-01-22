@@ -1,14 +1,24 @@
 {
-    "manifest_version": 2,
-    "name": "Twitter NFT Fixer",
-    "short_name": "NFT Blocker",
+    "manifest_version": 3,
+    "name": "Twitter Hexagons Begone",
+    "short_name": "NFT Hexagon Disabler",
     "version": "0.0.1",
-    "description": "Fix the shit looking hexagons on twitter.l",
+    "description": "Changes the hexagon profile avatars on Twitter back to circles.",
+    "icons": {
+        "48": "images/sick-nft_48.png",
+        "128": "images/sick-nft_128.png"
+    },
     "content_scripts": [{
         "all_frames": true,
         "js": ["content-script.js"],
         "matches": ["*://*.twitter.com/*"],
         "exclude_globs": ["*://api.twitter.com/*"]
     }],
-    "web_accessible_resources": ["script.js"]
+    "web_accessible_resources": [
+        {
+            "resources": ["script.js"],
+            "matches": ["https://*.twitter.com/*"],
+            "extension_ids": ["kgfnlmpfgbbcmnnhpbpfibibnfjhdolk"]
+        }
+    ]
 }
