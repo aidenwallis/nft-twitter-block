@@ -1,8 +1,11 @@
 (function() {
-    const getURL = (url) => chrome.runtime.getURL(url);
+    if (typeof browser === "undefined") {
+        // Cross-browser compat
+        var browser = chrome;
+    }
     
     // mount script
     const el = document.createElement("script");
-    el.src = getURL("script.js");
+    el.src = browser.runtime.getURL("script.js");
     (document.head || document.documentElement).appendChild(el);
 })();
