@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Twitter NFT Fixer",
+    "short_name": "NFT Blocker",
+    "version": "0.0.1",
+    "description": "Fix the shit looking hexagons on twitter.l",
+    "content_scripts": [{
+        "all_frames": true,
+        "js": ["content-script.js"],
+        "matches": ["*://*.twitter.com/*"],
+        "exclude_globs": ["*://api.twitter.com/*"]
+    }],
+    "web_accessible_resources": ["script.js"]
+}
